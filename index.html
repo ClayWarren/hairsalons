@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hair Salons in Johnson County, Iowa</title>
+    <title>Johnson County Hair Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #f5f5f5;
             color: #333;
         }
-        h1 {
+        header {
             text-align: center;
-            color: #2c3e50;
-        }
-        h2 {
-            color: #2980b9;
+            padding: 20px;
+            background-color: #ecf0f1;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        details summary {
+            color: #2980b9;
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        details[open] summary {
+            background-color: #3498db;
+            color: white;
         }
         ul {
             list-style-type: none;
@@ -30,16 +42,21 @@
         }
         .salon {
             background-color: #fff;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .salon:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         .city-section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         footer {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 0.9em;
             color: #7f8c8d;
         }
@@ -50,99 +67,150 @@
         a:hover {
             text-decoration: underline;
         }
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        #back-to-top:hover {
+            background-color: #2980b9;
+        }
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .salon { padding: 10px; }
+            h1 { font-size: 1.5em; }
+        }
     </style>
 </head>
 <body>
-    <h1>Hair Salons in Johnson County, Iowa</h1>
+    <header>
+        <h1>Johnson County Hair Guide</h1>
+        <p>Your directory for hair salons in Johnson County, Iowa</p>
+    </header>
 
     <div class="city-section">
-        <h2>Iowa City</h2>
-        <ul>
-            <li class="salon"><a href="https://thompsoncosalon.com/" target="_blank"><strong>Thompson & Co. Salon Parlor</strong></a>: Couture haircuts, styling, color services, treatments</li>
-            <li class="salon"><a href="https://habasalon.com/" target="_blank"><strong>HABA Salon</strong></a>: Professional styling, haircuts, coloring, extensions</li>
-            <li class="salon"><a href="https://buzz-salon.wheree.com/" target="_blank"><strong>Buzz Salon</strong></a>: Haircuts, styling, color services</li>
-            <li class="salon"><a href="https://www.avensonsalon.com/" target="_blank"><strong>Avenson Salon & Boutique</strong></a>: Cuts, color, waxing, styling</li>
-            <li class="salon"><a href="https://novasalonic.com/" target="_blank"><strong>Nova Salon</strong></a>: Haircuts (men, women, kids), highlights, coloring</li>
-            <li class="salon"><a href="https://www.timothygabriel.com/" target="_blank"><strong>Timothy Gabriel Salon</strong></a>: Hair transformations, cuts, color, styling</li>
-            <li class="salon"><a href="https://www.hairartstudio.com/" target="_blank"><strong>Hair Art</strong></a>: Styling services, haircuts, color services</li>
-            <li class="salon"><a href="https://mintsalonandbarbe.com/" target="_blank"><strong>Mint Salon + Barbe</strong></a>: Haircuts for all, styling, combined salon and barbering services</li>
-            <li class="salon"><a href="https://www.twinimagesalons.com/" target="_blank"><strong>Twin Image Salons</strong></a>: Comprehensive hair care, cuts, color, styling</li>
-            <li class="salon"><a href="https://zensalonandspa.com/" target="_blank"><strong>Zen</strong></a>: Haircuts, color, treatments, relaxed environment</li>
-        </ul>
+        <details>
+            <summary>Iowa City</summary>
+            <ul>
+                <li class="salon"><a href="https://thompsoncosalon.com/" target="_blank"><strong>Thompson & Co. Salon Parlor</strong></a>: Couture haircuts, styling, color services, treatments</li>
+                <li class="salon"><a href="https://habasalon.com/" target="_blank"><strong>HABA Salon</strong></a>: Professional styling, haircuts, coloring, extensions</li>
+                <li class="salon"><a href="https://buzz-salon.wheree.com/" target="_blank"><strong>Buzz Salon</strong></a>: Haircuts, styling, color services</li>
+                <li class="salon"><a href="https://www.avensonsalon.com/" target="_blank"><strong>Avenson Salon & Boutique</strong></a>: Cuts, color, waxing, styling</li>
+                <li class="salon"><a href="https://novasalonic.com/" target="_blank"><strong>Nova Salon</strong></a>: Haircuts (men, women, kids), highlights, coloring</li>
+                <li class="salon"><a href="https://www.timothygabriel.com/" target="_blank"><strong>Timothy Gabriel Salon</strong></a>: Hair transformations, cuts, color, styling</li>
+                <li class="salon"><a href="https://www.hairartstudio.com/" target="_blank"><strong>Hair Art</strong></a>: Styling services, haircuts, color services</li>
+                <li class="salon"><a href="https://mintsalonandbarbe.com/" target="_blank"><strong>Mint Salon + Barbe</strong></a>: Haircuts for all, styling, combined salon and barbering services</li>
+                <li class="salon"><a href="https://www.twinimagesalons.com/" target="_blank"><strong>Twin Image Salons</strong></a>: Comprehensive hair care, cuts, color, styling</li>
+                <li class="salon"><a href="https://zensalonandspa.com/" target="_blank"><strong>Zen</strong></a>: Haircuts, color, treatments, relaxed environment</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>Coralville</h2>
-        <ul>
-            <li class="salon"><a href="https://tru-salon.com/" target="_blank"><strong>Tru Salon</strong></a>: Luxury hair color, extensions, high-end styling</li>
-            <li class="salon"><a href="https://hairhousecoralville.com/" target="_blank"><strong>Hair House</strong></a>: Cuts, color, styling, professional setting</li>
-            <li class="salon"><a href="https://www.jcpenney.com/locations/ia/coralville/salon-coralville-ia-2758.html" target="_blank"><strong>JCPenney Hair Salon</strong></a>: Haircuts, perms, coloring, highlights, styling, treatments (e.g., deep conditioning)</li>
-            <li class="salon"><a href="https://salons.greatclips.com/us/ia/coralville/2032-8th-street" target="_blank"><strong>Great Clips</strong></a>: Haircuts (men, women, kids), styling, shampoos, conditioners, possible waxing</li>
-            <li class="salon"><a href="https://www.kelseyshoaff.com/" target="_blank"><strong>Kelsey Shoaff</strong></a>: Enhanced natural hair color, grey blending, low-maintenance styling</li>
-        </ul>
+        <details>
+            <summary>Coralville</summary>
+            <ul>
+                <li class="salon"><a href="https://tru-salon.com/" target="_blank"><strong>Tru Salon</strong></a>: Luxury hair color, extensions, high-end styling</li>
+                <li class="salon"><a href="https://hairhousecoralville.com/" target="_blank"><strong>Hair House</strong></a>: Cuts, color, styling, professional setting</li>
+                <li class="salon"><a href="https://www.jcpenney.com/locations/ia/coralville/salon-coralville-ia-2758.html" target="_blank"><strong>JCPenney Hair Salon</strong></a>: Haircuts, perms, coloring, highlights, styling, treatments (e.g., deep conditioning)</li>
+                <li class="salon"><a href="https://salons.greatclips.com/us/ia/coralville/2032-8th-street" target="_blank"><strong>Great Clips</strong></a>: Haircuts (men, women, kids), styling, shampoos, conditioners, possible waxing</li>
+                <li class="salon"><a href="https://www.kelseyshoaff.com/" target="_blank"><strong>Kelsey Shoaff</strong></a>: Enhanced natural hair color, grey blending, low-maintenance styling</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>North Liberty</h2>
-        <ul>
-            <li class="salon"><a href="https://flipsalonandspa.com/" target="_blank"><strong>Flip Salon & Spa</strong></a>: Haircuts, color, spa treatments, friendly stylists</li>
-            <li class="salon"><a href="https://965salonandspa.com/" target="_blank"><strong>965 Salon and Spa</strong></a>: Varies by stylist, typically haircuts, coloring, styling (suite-based)</li>
-            <li class="salon"><a href="https://www.hartwoodsalon.com/" target="_blank"><strong>Hartwood Salon</strong></a>: Professional hair services, cuts, color, styling</li>
-            <li class="salon"><a href="https://www.theknot.com/marketplace/beauty-op-north-liberty-ia-2053988" target="_blank"><strong>Beauty Op</strong></a>: Styling and beauty services (specifics may vary; linked to The Knot page)</li>
-        </ul>
+        <details>
+            <summary>North Liberty</summary>
+            <ul>
+                <li class="salon"><a href="https://flipsalonandspa.com/" target="_blank"><strong>Flip Salon & Spa</strong></a>: Haircuts, color, spa treatments, friendly stylists</li>
+                <li class="salon"><a href="https://965salonandspa.com/" target="_blank"><strong>965 Salon and Spa</strong></a>: Varies by stylist, typically haircuts, coloring, styling (suite-based)</li>
+                <li class="salon"><a href="https://www.hartwoodsalon.com/" target="_blank"><strong>Hartwood Salon</strong></a>: Professional hair services, cuts, color, styling</li>
+                <li class="salon"><a href="https://www.theknot.com/marketplace/beauty-op-north-liberty-ia-2053988" target="_blank"><strong>Beauty Op</strong></a>: Styling and beauty services (specifics may vary; linked to The Knot page)</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>Solon</h2>
-        <ul>
-            <li class="salon"><a href="https://www.facebook.com/missyscornersalon/" target="_blank"><strong>Missy's Corner Salon</strong></a>: Haircuts, color, styling (local community focus; linked to Facebook)</li>
-        </ul>
+        <details>
+            <summary>Solon</summary>
+            <ul>
+                <li class="salon"><a href="https://www.facebook.com/missyscornersalon/" target="_blank"><strong>Missy's Corner Salon</strong></a>: Haircuts, color, styling (local community focus; linked to Facebook)</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>Lone Tree</h2>
-        <ul>
-            <li class="salon"><a href="https://www.facebook.com/primecutoxford/" target="_blank"><strong>Prime Cut</strong></a>: Basic hair services, community-focused styling (linked to Facebook; serves Lone Tree and Oxford)</li>
-        </ul>
+        <details>
+            <summary>Lone Tree</summary>
+            <ul>
+                <li class="salon"><a href="https://www.facebook.com/primecutoxford/" target="_blank"><strong>Prime Cut</strong></a>: Basic hair services, community-focused styling (linked to Facebook; serves Lone Tree and Oxford)</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>Oxford</h2>
-        <ul>
-            <li class="salon"><a href="https://www.facebook.com/primecutoxford/" target="_blank"><strong>Prime Cut</strong></a>: Basic hair services, community-focused styling (shared with Lone Tree; linked to Facebook)</li>
-        </ul>
+        <details>
+            <summary>Oxford</summary>
+            <ul>
+                <li class="salon"><a href="https://www.facebook.com/primecutoxford/" target="_blank"><strong>Prime Cut</strong></a>: Basic hair services, community-focused styling (shared with Lone Tree; linked to Facebook)</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>Shueyville</h2>
-        <ul>
-            <li class="salon"><a href="https://www.facebook.com/beautyshoppehair/" target="_blank"><strong>Beauty Shoppe</strong></a>: Haircuts, styling (serving Shueyville and Swisher, confirmation needed; linked to Facebook)</li>
-        </ul>
+        <details>
+            <summary>Shueyville</summary>
+            <ul>
+                <li class="salon"><a href="https://www.facebook.com/beautyshoppehair/" target="_blank"><strong>Beauty Shoppe</strong></a>: Haircuts, styling (serving Shueyville and Swisher, confirmation needed; linked to Facebook)</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>Swisher</h2>
-        <ul>
-            <li class="salon"><a href="https://www.facebook.com/beautyshoppehair/" target="_blank"><strong>Beauty Shoppe</strong></a>: Haircuts, styling (serving Swisher and Shueyville, confirmation needed; linked to Facebook)</li>
-        </ul>
+        <details>
+            <summary>Swisher</summary>
+            <ul>
+                <li class="salon"><a href="https://www.facebook.com/beautyshoppehair/" target="_blank"><strong>Beauty Shoppe</strong></a>: Haircuts, styling (serving Swisher and Shueyville, confirmation needed; linked to Facebook)</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>West Branch</h2>
-        <ul>
-            <li class="salon"><a href="https://www.facebook.com/guysandgalshairstyles/" target="_blank"><strong>Guys & Gals Hairstyles</strong></a>: Haircuts, styling, community-focused for men and women (linked to Facebook)</li>
-        </ul>
+        <details>
+            <summary>West Branch</summary>
+            <ul>
+                <li class="salon"><a href="https://www.facebook.com/guysandgalshairstyles/" target="_blank"><strong>Guys & Gals Hairstyles</strong></a>: Haircuts, styling, community-focused for men and women (linked to Facebook)</li>
+            </ul>
+        </details>
     </div>
 
     <div class="city-section">
-        <h2>Tiffin, University Heights, and Hills</h2>
-        <ul>
-            <li>No dedicated salons identified. Residents likely travel to nearby cities like Iowa City, Coralville, or North Liberty.</li>
-        </ul>
+        <details>
+            <summary>Tiffin, University Heights, and Hills</summary>
+            <ul>
+                <li>No dedicated salons identified. Residents likely travel to nearby cities like Iowa City, Coralville, or North Liberty.</li>
+            </ul>
+        </details>
     </div>
+
+    <a href="#" id="back-to-top">Back to Top</a>
 
     <footer>
         <p>Data compiled as of March 12, 2025. For exact services, contact salons directly. Hosted on GitHub Pages.</p>
     </footer>
+
+    <!-- Optional JavaScript for future enhancements (e.g., search, dynamic updates) -->
+    <!-- <script>
+        // Example: Add search functionality later
+        // const searchBar = document.createElement('input');
+        // searchBar.placeholder = 'Search salons or services...';
+        // document.querySelector('header').appendChild(searchBar);
+    </script> -->
 </body>
 </html>
